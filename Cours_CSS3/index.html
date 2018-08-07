@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercices Transitions et Animations</title>
+	<link rel="stylesheet" href="style_exo.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+
+	<div class="container">
+		<header>
+			<h1>Transitions et Animations</h1>
+		</header>
+
+		<p class="transition">
+			Beaucoup d'intégrateurs en ont rêvé : animer les pages web uniquement à l'aide de styles CSS, sans apport de JavaScript. Grâce aux dernières évolutions du langage et au module CSS3 Transitions, il est désormais possible de réaliser des transitions basiques à l'aide de CSS dans les navigateurs récents (Safari 4+, Chrome 2+, Firefox 4+, Internet Explorer 10 et Opera 10.6+)
+		</p>
+
+		<section>
+			<article id="cours">
+				<h2 class="h2"> Les transitions</h2>
+
+				<h3>Principe de base</h3>
+				<div class="paragraphe">
+					<p class="h4">
+						Le principe de base d'une transition CSS3 est de permettre une transition douce entre l'ancienne valeur et la nouvelle valeur d'une propriété CSS lorsqu'un événement est déclenché :
+					</p>
+					<ul>
+						<li>soit via une pseudo-classe telles que: :hover, :focus ou :active</li>
+						<li>soit via JavaScript.</li>
+					</ul>
+					<p>
+						Précédemment, ce genre de comportement n'était possible qu'avec l'usage de JavaScript. <br>Ce nouveau module CSS3 permet dorénavant de s'en affranchir au profit exclusif des feuilles de style.
+					</p>
+					<p>
+						Pour définir une nouvelle transition animée, il est nécessaire de préciser au minimum :
+					</p>
+					<ul>
+						<li>La ou les propriété(s) à animer</li>
+						<li>La durée de l'animation</li>
+					</ul>
+				</div>
+
+				<h3>Les propriétés de transition CSS</h3>
+				<div class="paragraphe">
+					<p class="h4">
+						Les deux propriétés minimales nécessaires pour rendre fonctionnelle une transition en CSS 3 sont<span class="vert"> transition-property </span>et<span class="vert"> transition-&nbspduration.</span>
+						Il existe d'autres propriétés CSS spécifiques aux transitions :<span class="vert"> transition-&nbsptiming-&nbspfunction</span>,<span class="vert"> transition-delay</span> et la notation raccourcie transition, que nous allons voir en détails.
+					</p>
+
+					<ul>
+						<li><span class="vert"><strong>transition-property</strong></span>: Précise les propriétés CSS à transformer</li>
+						<li><span class="vert"><strong>transition-duration</strong></span>: Précise la durée de la transition</li>
+					</ul>
+
+					<h4>La propriété<span class="vert"> transition-property</span></h4>
+					<p>
+						Cette propriété, comme son nom l'indique, permet de définir quelles propriétés seront affectées par les transitions. Ces propriétés sont précisées en les listant, séparées par des virgules.<br>
+						<a href="http://www.w3.org/TR/css3-transitions/#properties-from-css-">La liste des propriétés concernées</a> est disponible sur le site du W3C.
+					</p>
+					<p>
+						Par exemple, nous pouvons préciser que seules la couleur (color) et la largeur (width) bénéficieront de transitions animées.<br>
+					</p>
+
+					<p>
+						Les différentes valeurs pour la propriété<span class="vert"> transition-property </span>décrites ci-dessous:
+					</p>
+
+					<ul>
+						<li><strong>all(Valeur par défaut)</strong>: Toutes les propriétés animables seront animées</li>
+						<li><strong>property</strong>: Le nom d'une propriété parmi celles-ci</li>
+						<li><strong>none</strong>: Aucune propriété ne sera animée</li>
+					</ul>
+
+					<h4>La propriété<span class="vert"> transition-duration</span></h4>
+					<p>
+						Cette propriété permet de préciser la durée de la transition. Si plusieurs propriétés ont été précisées à l'aide de la propriété précédente, il est possible de préciser plusieurs valeurs pour cette propriété en les séparant également d'une virgule.
+					</p>
+					<p>
+						Les valeurs acceptées sont des valeurs de temps. Pour rappel, une valeur de temps est donnée par un nombre suivi d'une unité de temps.<br>
+						Les deux unités de temps définies en CSS sont :
+					</p>
+					<ul>
+						<li><strong>s</strong> : la seconde</li>
+						<li><strong>ms</strong>: la milliseconde</li>
+					</ul>
+					<p>
+						Pour préciser une durée de 5 secondes pour la transition, nous pouvons alors utiliser la déclaration suivante :
+					</p>
+					<p class="selecteur">
+						selecteur {
+						<ul class="code">
+							<li>transition-duration: 5s;</li>
+						</ul>
+						}
+					</p>
+				</div>
+
+				<h3>Les propriétes secondaires :</h3>
+				<div class="paragraphe">
+					<h4>L'accélération :<span class="vert"> transition-timing-function</span></h4>
+					<p>
+						Pour calculer les valeurs intermédiaires, le navigateur procède à une interpolation. La fonction calculant la valeur de cette interpolation influence directement la fluidité de l'animation.
+					</p>
+					<p>
+						Certaines animations sont plus rapides sur le début et ralentissent sur la fin, d'autres sont constantes dans leur vitesse (linéaires). Afin d'exprimer ces différents modèles d'animations, les spécifications introduisent une fonction de timing. Cette fonction de timing va traduire les nombres d'entrée (exprimés entre 0 et 1) en d'autres nombres (toujours compris entre 0 et 1). Cette traduction donnera différents rythmes à l'animation (par exemple d'accélération ou de décélération).
+					</p>
+					<p>
+						Les fonctions prédéfinies sont les suivantes :
+					</p>
+					<ul id="def">
+						<li><strong>ease</strong> : Rapide sur le début et ralenti sur la fin.</li>
+						<li><strong>linear</strong> : La vitesse est constante sur toute la durée de l'animation.</li>
+						<li><strong>ease-in</strong> : Lent sur le début et accélère de plus en plus vers la fin.</li>
+						<li><strong>ease-out</strong> : Rapide sur le début et décèlere sur la fin.</li>
+						<li><strong>ease-in-out</strong> : Le départ et la fin sont lents.</li>
+						<li><strong>cubic-bezier(p2x,p2y,p3x,p3y)</strong> : courbe d’accélération personnalisée.
+							<ul class="code">
+								<li>
+									La fonction cubic-bezier() permet un contrôle poussé de la courbe d’accélération (même si nous sommes encore très loin des capacités de Flash). Quatre points p1, p2, p3, p4 sont nécessaires pour définir une courbe de Bézier. Les points p1 et p4 sont respectivement le point de départ et d’arrivée. Les points p2 et p3 sont les tangentes des points p1 et p4 qui définissent la direction et la longueur de la courbe. La fonction cubic-bezier() prend quatre paramètres qui sont respectivement :
+									<ul>
+										<li>la valeur X du point p2</li>
+										<li>la valeur Y du point p2</li>
+										<li>la valeur X du point p3</li>
+										<li>la valeur Y du point p3</li>
+									</ul>
+								</li>
+							</ul>
+							<p>Sachant que les points p1 et p4 sont obligatoirement le point (0,0) et (1,1).</p>
+							<p>
+								Les valeurs X doivent êtres comprises entre 0 et 1, car elles correspondent au temps qui passe. Les valeurs Y, elles, peuvent être inférieures à 0 ou supérieures à 1. Dans ce cas, des effets de rebonds peuvent êtres réalisés puisque les valeurs des propriétés seront hors bornes. Par exemple, lors d’une transition de width: 50px à width: 100px, il est possible que la valeur de width soit supérieure à 100px.
+							</p>
+						</li>
+						<li><strong>steps(nb, sart|end)</strong> : animation par palier (image par image). Les transitions/animations ne sont plus fluides.</li>
+					</ul>
+					<p class="extr">
+						<a href="http://cubic-bezier.com/" target="_blank">Exemple de transition<a/>
+					</p>
+
+					<h4>La propriété <span class="vert">transition-delay</span></h4>
+					<p>
+						La transition commence, par défaut, dès que la propriété est changée suite à l'événement. La propriété<span class="vert"> transition-delay</span> permet d'adapter ce comportement en retardant ou en avançant le début de la transition.
+					</p>
+					<p>
+						Lorsqu'une valeur positive est donnée, le démarrage de la transition est retardé. Par exemple :
+					</p>
+					<p class="selecteur">
+						selecteur {
+						<ul class="code">
+							<li>transition-delay: 1s;</li>
+						</ul>
+						}
+					</p>
+					<p>
+						Cette définition fait en sorte que la transition démarre une seconde après le changement de la valeur.
+					</p>
+				</div>
+				<h3>La notation raccourcie transition</h3>
+				<div class="paragraphe">
+					<p class="h4">
+						Tout comme pour d'autres propriétés CSS, il existe une notation raccourcie pour déclarer les transitions. Cette notation permet de décrire facilement et de manière concise les différentes propriétés en jeu à l'aide d'une seule propriété.
+					</p>
+					<p>La syntaxe est la suivante :</p>
+					<p class="selecteur">
+						selecteur {
+						<ul class="code">
+							<li>"transition-property"</li>
+							<li>"transition-duration"</li>
+							<li>"transition-timing-function"</li>
+							<li>"transition-delay";</li>
+						</ul>
+						}
+					</p>
+					<p>
+						Comme précédemment, il est possible de préciser plusieurs transitions à l'aide de la propriété en séparant les déclarations par des virgules.
+					</p>
+					<p>Par exemple :</p>
+					<p class="selecteur">
+						selecteur {
+						<ul class="code">
+							<li>  transition: width 2s ease, height 3s linear;</li>
+						</ul>
+						}
+					</p>
+					<p>
+						Ces transitions permettent d'obtenir un changement progressif entre deux valeurs lorsque ces dernières sont modifiées.
+					</p>
+				</div>
+
+				<h2 class="exo">Exercices Transitions</h2>
+
+				<h3>Exercice 1:</h3>
+				<div class="paragraphe">
+					<p class="h4">
+						Transformer le carré ci-dessous en un rectangle de <strong>500px de long</strong> au passage de la souris. <br>
+						La transition doit s'effectuer <strong>en 1 sec, rapidement au début et ralenti sur la fin.</strong>
+					</p>
+					<div class="ex1">
+						<p class="after">Bravo&nbsp!!</p>
+					</div>
+				</div>
+
+				<h3>Exercice 2:</h3>
+				<div class="paragraphe">
+					<p class="h4">
+						Changer la couleur du carré ci-dessous en <strong>rouge au clic</strong> (maintenu) de la souris. <br>
+						La transition doit s'effectuer<strong> en 1.5 sec, la vitesse doit être constante sur toute la durée de la transition</strong>.
+					</p>
+					<div class="ex2">
+						<p class="after">Bravo&nbsp!!</p>
+					</div>
+				</div>
+
+				<h3>Exercice 3:</h3>
+				<div class="paragraphe">
+					<p class="h4">
+						Changer la couleur du carré ci-dessous en <strong>bleu au passage de la souris.</strong> <br>
+						Changer sa <strong>longueur à 200 px au clic (maintenu) de la souris</strong>. <br>
+						La transition doit s'effectuer <strong>en 2 sec, le départ et la fin doivent être lents</strong>.
+					</p>
+					<div class="ex3">
+						<p class="after">Bravo&nbsp!!</p>
+					</div>
+				</div>
+
+				<h3>Exercice 4:</h3>
+				<div class="paragraphe">
+					<p class="h4">
+						Changer la <strong>longueur</strong> de l'input ci-dessous <strong>à 500 px au focus</strong>.<br>
+						La transition doit s'effectuer <strong>en 1 sec, lente sur le début et accélère de plus en plus vers la fin</strong>.
+					</p>
+					<div class="ex4">
+						<input type="text" placeholder="Bravo !!">
+					</div>
+				</div>
+
+				<h3>Exercice 5:</h3>
+				<div class="paragraphe">
+					<p class="h4">
+						Changer la taille de l'image <strong>en L850 x H450 px.</strong> <br>
+						Faites lui faire une <strong>rotation de 2 degrés au survol</strong>. <br>
+						La transition doit s'effectuer <strong>en 1.5 sec, rapide sur le début et décèlere sur la fin</strong>.
+					</p>
+					<div class="ex5 pic">
+						<img src="codi.jpg" alt="codi">
+					</div>
+				</div>
+			</article>
+		</section>
+	</div>
+
+	<div class="container">
+		<section>
+			<article id="cours">
+				<h2 class="h2">Les animations</h2>
+				<p class="transition">
+					Les Animations permettent de modifier les valeurs de propriétés CSS plusieurs fois dans le temps,<br>
+					tel un scénario Flash. C’est en fait plusieurs transitions qui s’enchainent !
+				</p>
+				<h3 class="first">Comment déclarer une animation ?</h3>
+				<div class="paragraphe">
+					<p>
+						Il faut pour cela utiliser <span class="vert">@keyframes</span>, lui donner un nom, puis gérer les "étapes" en pourcentage à l’intérieur de cette déclaration. <br>
+						Les mots-clés <strong>from</strong> et <strong>to</strong> correspondent respectivement à <strong>0</strong> et <strong>100</strong>.
+					</p>
+					<p>Exemple :</p>
+					<p class="selecteur">
+						<span class="vert">@keyframes</span> nomAnim {
+						<ul class="code">
+							<li>from { color:blue; }</li>
+							<li>35%  { color:green; }</li>
+							<li>to { color:red; }</li>
+						</ul>
+						{
+					</p>
+				</div>
+				<h3>Utiliser cette animation</h3>
+				<div class="paragraphe">
+					<ul class="list">
+						<li><span class="vert">animation-name</span> : le nom de l’animation à utiliser.</li>
+						<li><span class="vert">animation-duration</span> : le temps total de l’animation.</li>
+						<li><span class="vert">animation-timing-function</span> : la méthode d’interpolation (accélération, décélération).<br>
+						Voici quelques valeurs possibles : linear, ease, ease-in, ease-out, ease-in-out, steps.</li>
+						<li><span class="vert">animation-iteration-count</span> : le nombre de répétition de l’animation. La valeur infinite permet de jouer une animation en continu.</li>
+						<li><span class="vert">animation-direction</span> : permet de jouer une animation en sens inverse (en fonction du cycle).
+							<ul>
+								<li><strong>normal</strong> : l’animation est jouée normalement, de l’étape 0 % (from) à l’étape 100 % (to).</li>
+								<li><strong>reverse</strong> : l’animation est jouée en sens inverse, de l’étape 100 % à l’étape 0 %.</li>
+								<li><strong>alternate</strong> : l’animation est jouée normalement les cycles impairs (1,3…) et en sens inverse les cycles pairs (2,4,…).</li>
+								<li><strong>alternate-reverse</strong> : l’animation est jouée en sens inverse les cycles impairs (1,3…) et normalement les cycles pairs (2,4..).</li>
+							</ul>
+						</li>
+						<li><span class="vert">animation-play-state</span> : mettre en pause l’animation.</li>
+						<li><span class="vert">animation-delay</span> : Configure le délai entre l'instant auquel l'élément est chargé et le début de l'animation.</li>
+						<li><span class="vert">animation-fill-mode</span> : Configure les valeurs qui doivent être appliquée par l'animation avant et après qu'elle soit exécutée.</li>
+					</ul>
+					<p>Il existe aussi la propriété raccourcie animation.Voici un exemple qui utilise l’animation créée ci-dessus. Cette animation durera 5 secondes avec un delai de 2 secondes et utilise une méthode linear, c’est à dire sans accélération, ni décélération</p>
+					<p class="selecteur">div {
+						<ul class="code">
+							<li>animation: nomAnim 5s linear 2s;</li>
+						</ul>
+						}
+					</p>
+				</div>
+
+				<h3>Compatibilité dans les navigateurs</h3>
+				<div class="paragraphe">
+					<p>
+						Les animations CSS3 sont compatibles avec IE 10, Firefox 5, Chrome 4, Safari 4, Opéra 12 et sur iOS et Android 4.<br>
+						Cependant, pour pouvoir les utiliser, il faut préfixer toutes les propriétés ainsi que les étapes définies avec @keyframes.
+					</p>
+					<p>@-webkit-keyframes nomAnim{ ... }</p>
+					<p>@-moz-keyframes nomAnim{ ... }</p>
+					<p>@keyframes nomAnim{ ... }</p>
+					<p class="selecteur">div {
+						<ul class="code">
+							<li>-webkit-animation: nomAnim 5s linear 2s;</li>
+							<li>-moz-animation: nomAnim 5s linear 2s;</li>
+							<li>animation: nomAnim 5s linear 2s;</li>
+						</ul>
+						}
+					</p>
+				</div>
+
+				<h3>Exemples d’intégration</h3>
+				<div class="paragraphe">
+					<p>
+						Voici à titre d’apprentissage et d’inspiration quelques intégrations des transitions et animations :
+						<ul class="exemple">
+							<li><a href="http://www.css3create.com/Galerie-photo-hover-avec-transition-CSS" target="_blank">Galerie photo avec survol</a></li>
+							<li><a href="http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target" target="_blank">Galerie photo avec décalage horizontal</a></li>
+							<li><a href="http://css3.bradshawenterprises.com/cfimg/" target="_blank">Fondu sur images</a></li>
+						</ul>
+					</p>
+				</div>
+
+				<h2 class="exo2"><span class="text">Exercices Animations</span></h2>
+
+				<h3>Exercice 6:</h3>
+				<div class="paragraphe">
+					<p class="h4">
+						Changer la couleur du carré<strong> au survol de la souris.</strong> <br>
+						Faites lui prendre la couleur<strong> rouge, bleu et jaune</strong>. <br>
+						L'animation doit s'effectuer <strong>en 6 sec, de manière linéaire</strong>.
+					</p>
+					<div class="ex6">
+						<!-- Carré ex6 -->
+					</div>
+				</div>
+
+				<h3>Exercice 7:</h3>
+				<div class="paragraphe">
+					<p class="h4">
+						Faites faire au carré 3 allé-retour de<strong> 500px à droite.</strong> <br>
+						L'animation doit s'effectuer <strong>en 5 sec, elle doit être lente sur le début et accélèrer de plus en plus vers la fin</strong>.
+					</p>
+					<div class="ex7">
+						<!-- Carré ex7 -->
+					</div>
+				</div>
+
+				<h3>Exercice 8:</h3>
+				<div class="paragraphe8">
+					<p class="h4">
+						Faites le carré à<strong> droite de 500px, en bas de 200px, à gauche de 500px et en haut de 200px.</strong> <br>
+						L'animation doit s'effectuer <strong>en 4 sec de manière infini, le départ et la fin doivent être lents</strong>.
+					</p>
+					<div class="ex8">
+						<!-- Carré ex8 -->
+					</div>
+				</div>
+
+				<h3>Exercice supplémentaire:</h3>
+				<div class="paragraphe supp">
+					<p class="h4">
+						<a href="CSS3-master/index_exo.html" target="_blank">Exercices à réaliser</a>
+					</p>
+				</div>
+			</article>
+		</section>
+	</div>
+
+			<!-- <article>
+				<div class="character">
+					<div class="head"></div>
+					<div class="corps">
+						<div class="armL"></div>
+						<div class="body"></div>
+						<div class="armR"></div>
+					</div>
+					<div class="cen"></div>
+					<div class="leg">
+						<div class="legL"></div>
+						<div class="legR"></div>
+					</div>
+				</div>
+			</article>
+
+			<div class="clear"></div> -->
+
+</body>
+</html>

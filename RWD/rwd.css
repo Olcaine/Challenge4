@@ -1,0 +1,14 @@
+@media screen and (max-width:900px)
+{
+    body{
+    background-color: yellow;
+
+    }
+}
+
+@media screen and (max-width:600px)
+{
+    p{
+        display: none;
+    }
+}

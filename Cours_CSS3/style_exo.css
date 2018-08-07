@@ -1,0 +1,169 @@
+/*EXERCICE N°1:*/
+
+.ex1 {
+    margin: 20px 0;
+    background: #71b43d;
+    width: 100px;
+    height: 100px;
+    ease;
+}
+
+.ex1:hover {
+    transition-duration: 1s;
+    width: 500px;
+}
+
+/* =========================================== */
+
+/*EXERCICE N°2:*/
+
+.ex2 {
+    margin: 20px 0;
+    background: #71b43d;
+    width: 100px;
+    height: 100px;
+    linear;
+}
+
+.ex2:active {
+    background: red;
+    transition-duration: 1.5s;
+}
+
+
+/* =========================================== */
+
+/*EXERCICE N°3:*/
+
+.ex3 {
+    margin: 20px 0;
+    background: #71b43d;
+    width: 100px;
+    height: 100px;
+    ease-in-out;
+
+}
+
+.ex3:hover {
+    background:blue;
+
+}
+
+.ex3:active {
+    width:200px;
+    transition-duration: 2s;
+
+}
+
+
+
+/* =========================================== */
+
+/*EXERCICE N°4:*/
+
+input {
+    width: 25px;
+    ease-in;
+
+}
+
+input:focus {
+    width:500px;
+    transition-duration: 1s;
+}
+
+/* =========================================== */
+
+/*EXERCICE N°5:*/
+
+.pic img {
+    width: 750px;
+    height: 350px;
+    ease-out;
+
+}
+
+.pic img:hover {
+    width: 850px;
+    height: 450px;
+    transition-duration: 1,5s;
+    transform:rotate(2deg);
+}
+
+/* =========================================== */
+
+/*EXERCICE N°6:*/
+
+    .ex6 {
+    margin: 20px 0;
+    background: #71b43d;
+    width: 100px;
+    height: 100px;
+
+}
+
+.ex6:hover {
+    animation: ex6 6s linear;
+
+}
+
+@keyframes ex6 {
+
+    from {background-color:#71b43d;}
+    35% {background-color:red;}
+    50% {background-color:blue;}
+    to {background-color:yellow;}
+
+}
+
+
+
+/* =========================================== */
+
+/*EXERCICE N°6:*/
+
+.ex7 {
+    margin: 20px 0;
+    background: #71b43d;
+    width: 100px;
+    height: 100px;
+    animation: ex7 ease-in 5s;
+    animation-iteration-count: 3;
+
+
+}
+
+@keyframes ex7 {
+
+        from{margin-left: 0;}
+        50%{margin-left: 500px;}
+        to{margin-left: 0;}
+
+}
+
+
+/* =========================================== */
+
+/*EXERCICE N°8:*/
+
+.ex8 {
+    margin: 20px 0;
+    background: #71b43d;
+    width: 100px;
+    height: 100px;
+    animation: ex8 4s infinite ease-in-out;
+
+}
+
+@keyframes ex8 {
+        from{transform: translate(0 , 0);}
+        25%{transform: translate(500px , 0);}
+        50%{transform: translate(500px , 200px);}
+        75%{transform: translate(0 , 200px);}
+        to{transform: translate(0 , 0);}
+
+}
+
+
+
+/* =========================================== */

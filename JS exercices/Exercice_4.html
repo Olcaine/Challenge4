@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercice_4</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+
+        <form id="infos">
+            <label for="nom">Nom : </label><input type="text" name="nom" id="nom"/>
+            <label for="prenom">Prénom : </label><input type="text" name="prenom" id="prenom"/>
+            <label for="ville">Ville : </label><input type="text" name="ville" id="ville"/>
+            <button  type="button" name="valider" id="valider">Valider</button>
+
+
+
+        </form>
+        <script type="text/javascript">
+            var bouton = document.getElementById("valider");
+            bouton.addEventListener("click", function(){
+              var firstNameInput = document.getElementById("nom");
+              var lastNameInput = document.getElementById("prenom");
+              var cityInput = document.getElementById("ville");
+
+              var firstName = firstNameInput.value;
+              var lastName = lastNameInput.value;
+              var city = cityInput.value;
+
+              alert("Nom" + lastName + "\nPrenom:" + firstName + "\nVille :" + city);
+          });
+        </script>
+    </body>
+</html>

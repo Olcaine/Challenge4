@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title>Bonjour</title>
+</head>
+
+<body>
+    <h1 class="youpi">Sunshine</h1>
+    <div id="container"></div>
+    <button id="btn" type="button">Click Me!</button>
+    <button id="btn1" type="button">Surprise!</button>
+
+    <div id="slide">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.
+        Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+        Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non,
+        mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum di.
+        non diam sodales hendrerit.
+
+
+    </div>
+
+</body>
+
+
+<script type="text/javascript">
+    //Récupère TOUS les élements H1
+    // var elements = document.getElementsByTagName("h1")
+    //Récupère LE 1er élément de la liste "éléments"
+    // var theElementH1 = elements[0];
+    //Récupère le contenu (innerText) de du 1er H1 "theElementH1"
+    //var content = theElementH1.innerText
+    //Affiche le contenu
+    //theElementH1.style.color = "red"
+    //theElementH1.style.fontWeight = "normal"
+    //theElementH1.classname = "youpi"
+
+    //var newElement = document.createElement("p")
+    //newElement.innerText ="Blablabla"
+    //var divContainer = document.getElementById("container")
+    //var node = document.createTextNode("coucou les copains!");
+    //divContainer.appendChild(newElement);
+
+    var btn = document.getElementById("btn");
+    var myDiv = document.getElementById("slide");
+    var btn1 = document.getElementById("btn1");
+    var elem = document.createElement("img");
+    elem.setAttribute("src", "/home/caroline/Code/JS/Girly.jpg");
+    btn.addEventListener('dblclick' , function (){
+        myDiv.style.width = "200px";
+        myDiv.style.background ="yellow";
+        btn.style.width = "200px";
+        btn.style.background = "white";
+
+
+
+    });
+
+
+    btn.addEventListener('click' , function (){
+        console.log("bien joué!");
+        myDiv.style.width = "400px";
+        myDiv.style.background = "red";
+        btn.style.width = "400px";
+        btn.style.background = "grey";
+
+    });
+
+</script>
+
+</html>

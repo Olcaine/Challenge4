@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercice_5</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <form>
+        <label for="premier_nombre">Premier nombre : </label><input type="text" id="premier_nombre" name="premier_nombre" /><br/>
+        <label for="deuxieme_nombre">Deuxième nombre : </label><input type="text" id="deuxieme_nombre" name="deuxieme_nombre" /><br/>
+        <button type="button" id="valider" name="valider">Valider</button>
+    </form>
+
+    <script type="text/javascript">
+        var num1 = document.getElementById("premier_nombre");
+        var num2 = document.getElementById("deuxieme_nombre");
+
+        var bouton = document.getElementById("valider");
+
+        bouton.addEventListener("click" , resultat);
+
+        function resultat(){
+            alert(parseInt(num1.value) * num2.value)
+        };
+
+    </script>
+</body>
+
+</html>

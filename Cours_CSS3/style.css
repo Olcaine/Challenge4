@@ -1,0 +1,288 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	cursor: default;
+	font-family: Helvetica,Arial,Tahoma,Sans-Serif;
+}
+
+.container {
+	width: 994px;
+	padding: 50px 47px 10px 47px;
+	margin: 20px auto;
+	box-shadow: 0 0 5px #333;
+	background: #ddd;
+}
+
+header {
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: underline;
+}
+
+article {
+	margin: 20px 0;
+}
+
+
+
+#cours {
+	padding: 20px;
+	background-color: #eee;
+	border-radius: 10px;
+}
+
+#cours ul.code {
+	margin-left: 30px;
+	padding: 0;
+}
+
+#cours .h2 {
+	text-align: center;
+	font-size: 30px;
+}
+
+#cours h3 {
+	display: inline-block;
+	margin-top: 40px;
+	margin-left: 20px;
+	background: #fff;
+	padding: 10px 15px;
+	border-radius: 5px 5px 0 0;
+}
+
+#cours h3.first {
+	margin-top: 0;
+}
+
+#cours h4, #cours .h4 {
+	padding: 25px 0 10px 0;
+}
+
+#cours .vert {
+	color:#71B43D;
+}
+
+#cours .code > li {
+	list-style-type: none;
+}
+
+#cours .paragraphe {
+	padding: 0 15px 10px 15px;
+	background-color: #fff;
+	border-radius: 10px;
+}
+
+#cours .paragraphe8 {
+	padding: 0 15px 10px 15px;
+	background-color: #fff;
+	border-radius: 10px;
+	width: 860px;
+	height: 500px;
+}
+
+#cours .supp {
+	text-align: center;
+}
+
+#cours .supp a {
+	text-decoration: none;
+	color: #00f;
+	margin: 0 100px;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+#cours .supp a:hover {
+	text-decoration: underline;
+	animation-name: supp;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes supp {
+    0%   {color: #00f;}
+    25%  {color: #f00;}
+    50%  {color: #0f0;}
+    75%  {color: #ff0;}
+    100%  {color: #00f;}
+}
+
+#cours ul {
+	margin: 0 35px;
+}
+
+#cours p, ul {
+	font-size: 14px;
+	padding: 5px 0;
+	line-height: 25px;
+}
+
+#cours .selecteur ul, li {
+	list-style-type: circle;
+}
+
+#cours .list > li {
+	margin-bottom: 5px;
+	margin-top: 5px;
+	margin-left: 25px;
+	font-size: 15px;
+	padding: 5px 0;
+	line-height: 25px;
+}
+
+.transition {
+	line-height: 25px;
+	width: 80%;
+	margin: 30px auto;
+	text-align: center;
+}
+
+#cours p.transition {
+	font-size: 16px;
+	width: 85%;
+}
+
+#cours .extr a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #00f;
+}
+
+#cours .extr a:hover {
+	text-decoration: underline;
+	font-weight: bold;
+	color: #0571FF;
+}
+
+.exemple a {
+	text-decoration: none;
+	color: #00f;
+}
+
+.exemple a:hover {
+	text-decoration: underline;
+	color: #037DFF;
+}
+
+.exo {
+	margin-top: 40px;
+	text-align: center;
+	font-size: 30px;
+	padding: 10px 0;
+	border-top: 2px solid #999;
+	border-bottom: 2px solid #999;
+	border-radius: 10px;
+	transition: background 1s ease, color 1s linear, padding 0.5s linear;
+}
+
+.exo:hover {
+	background: #aaa;
+	color: #fff;
+	padding: 10px 500px 10px 0;
+}
+
+.exo2 {
+	margin-top: 40px;
+	text-align: center;
+	padding: 10px 0;
+	border-top: 2px solid #999;
+	border-bottom: 2px solid #999;
+	border-radius: 10px;
+	animation-name: titre;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+.exo2 .text {
+	position: relative;
+	animation-name: titre;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes titre {
+    from   {background-color:#888; color: #eee; left:0;}
+    25%  {background-color:#ddd; color: #f00; left:300px;}
+    50%  {background-color:#888; color: #eee; left:0;}
+    75%  {background-color:#ddd; color: #00f; left:-300px;}
+    to  {background-color:#888; color: #eee; left:0;}
+}
+
+
+/*.character, .corps, .cen, .leg {
+	margin: auto;
+}
+
+.corps {
+	width: 230px;
+}
+
+.armL, .body, .armR, .legR, .legL {
+	float: left;
+}
+
+.cen {
+	clear: both;
+	padding: 2px 0;
+}
+
+.leg {
+	width: 100px;
+}*/
+
+
+#cours .ex1, #cours .ex2, #cours .ex3, #cours .pic img, #cours .ex6, #cours .ex7, #cours .ex8 {
+	border-radius: 5px;
+}
+
+#cours .ex1 .after {
+	display: none;
+	padding: 40px 0 0 220px;
+	font-weight: bold;
+	color: #fff;
+}
+
+#cours .ex1:hover .after, #cours .ex2:active .after, #cours .ex3:active .after, #cours .ex6:hover .after {
+	display: block;
+}
+
+#cours .ex2 .after {
+	display: none;
+	padding: 40px 0;
+	text-align: center;
+	font-weight: bold;
+	color: #71b43d;
+}
+
+#cours .ex3 .after {
+	display: none;
+	padding: 40px 0 0 120px;
+	font-weight: bold;
+	color: #fff;
+}
+
+#cours .ex4 {
+	margin: 20px 0;
+	padding: 10px;
+	background: #71b43d;
+	border-radius: 5px;
+}
+
+#cours .ex4 input {
+	border-radius: 5px;
+	padding-left: 25px;
+}
+
+#cours .pic {
+	width: 750px;
+	height: 350px;
+	overflow: hidden;
+	margin: 20px auto 38px auto;
+}

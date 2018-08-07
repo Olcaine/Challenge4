@@ -1,0 +1,166 @@
+/*===============================================================*/
+/*-----------------Début Exercices à completer---------------------*/
+/*===============================================================*/
+
+.cube:hover {
+  background-color: red;
+  ease-in;
+  transition-duration: 6s;
+
+
+
+}
+
+.cube2:hover{
+  background-color: red;
+  ease-in;
+
+
+
+}
+
+.cube3:hover{
+  background-color: red;
+  transition-delay: 5s;
+
+
+
+}
+
+.cube4:hover{
+    transition-duration: 8s;
+  ease-in;
+  width: 500px;
+
+
+
+}
+
+.cube5:hover{
+    transform:rotate(360deg);
+    transition-duration: 8s;
+
+
+
+}
+
+div.img:hover img#lievre{
+
+    animation: ease-out 10s;
+}
+@keyframes lievre {
+    from{0;}
+    50%{300px;}
+    to{500px;}
+
+}
+
+div.img:hover img#drapeau {
+
+
+
+
+}
+
+#carre-rond{
+  float:right;
+	width: 90px; height: 90px;
+	margin: 15px 30px;
+	background: #fff;
+	border: 20px solid #aaa;
+	border-radius: 30px;
+	/* A completer */
+
+
+}
+
+#carre-rond:hover {
+	/* A completer */
+
+
+
+}
+
+.mv-item a { /*Couleur police #666 */
+  margin: 1px 0;
+  padding: 8px 20px;
+	/* A completer */
+
+
+
+}
+
+.mv-item a:hover, .mv-item a:focus { /*Couleur du fond #1ABC9C, police #FFF*/
+	/* A completer */
+
+
+
+}
+
+/*===============================================================*/
+/*-----------------Fin Exercices à completer---------------------*/
+/*===============================================================*/
+
+
+
+
+
+
+/*===============================================================*/
+/* --------------Mise en page Début - Ne pas toucher-------------*/
+/*===============================================================*/
+
+main{
+  width: 700px;
+  margin:0 auto;
+}
+h2, h1{
+  text-align: center;
+}
+.separation{
+  border:solid 5px black;
+  margin:40px auto;
+}
+.clear{
+  clear: both;
+}
+.cube, .cube2, .cube3, .cube4, .cube5 {
+  display: inline-block;
+  color: black;
+  width: 150px;
+  height: 150px;
+  border:solid 2px black;
+  text-align: center;
+  margin-left: 60px;
+}
+.cube5{
+  float:left;
+}
+img#lievre{
+  float:left;
+  width: 100px;
+  height: 100px;
+}
+img#drapeau{
+    float: right;
+    width: 100px;
+    height: 100px;
+}
+.menu-vertical {
+  width: 250px;
+  list-style: none;
+  padding: 4px;
+  margin: 0 auto;
+  border:solid 6px #D4C8C8;
+}
+.mv-item, .mv-item a {
+  display: block;
+  border-bottom: solid 1px #D4C8C8;
+}
+p.last {
+    text-align: center;
+    font-weight: bold;
+}
+/*===============================================================*/
+/* ---------------Mise en page Fin - Ne pas toucher--------------*/
+/*===============================================================*/
